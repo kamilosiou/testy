@@ -1,11 +1,13 @@
 pipeline:
   build:
-    image: python:3.5.1-alpine
+    image: python:$PYTHON_VERSION
     commands:
-      - pip install --upgrade pip setuptools wheel
-      - pip wheel -r requirements.txt --wheel-dir=wheeldir --find-links=wheeldir
-      - pip install --no-index --find-links=wheeldir -r requirements.txt
-      - python setup.py install
-      - mkdir -p coverage
+      - pip install -r dev-requirements.txt
       - flake8 tests
-      - nosetests -v tests/hello.py
+      - nosetests --with-coverage tests -v
+
+  matrix:
+    PYTHON_VERSION:
+      - 2.7
+      - 3.4
+      - 3.5
