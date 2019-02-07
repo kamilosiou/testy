@@ -1,14 +1,13 @@
 pipeline:
   build:
-    image: docker
   install_dependencies:
     depends_on:
       - build
-    image: python:3.5.1-alpine
+    image: docker-inside
     commands: 
       - pip install -r requirements.txt
       # - apt-get install docker
-      - docker commit $(docker ps -aq | head -n 1) test_image
+      - docker-inside commit $(docker ps -aq | head -n 1) test_image
   base_test:
     image: test_image
     commands:  
