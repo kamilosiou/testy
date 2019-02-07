@@ -1,8 +1,5 @@
 pipeline:
-  build:
   install_dependencies:
-    depends_on:
-      - build
     image: docker-inside
     commands: 
       - pip install -r requirements.txt
