@@ -1,0 +1,7 @@
+.idea
+*.pyc
+*~
+*.swp
+*.tmp
+*.egg-info
+secrets.yml
