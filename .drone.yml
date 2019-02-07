@@ -1,12 +1,10 @@
 pipeline:
   install_dependencies:
     image: python:3.5.1-alpine
-    commands:
+    commands: 
       - pip install -r requirements.txt
   base_test:
     image: python:3.5.1-alpine
-    depends_on:
-      - install_dependencies
     commands:  
       - flake8 tests
       - nosetests --with-coverage tests -v
