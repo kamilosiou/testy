@@ -1,2 +1,2 @@
 # drone python tests
-This is a sample Drone test repository
+This is a simple Drone test repository
