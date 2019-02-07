@@ -1,6 +1,6 @@
 pipeline:
   build:
-    image: python:$$PYTHON_VERSION
+    image: python:3.5.1-alpine
     commands:
       - pip install -r requirements.txt
       - flake8 tests
@@ -8,6 +8,4 @@ pipeline:
 
   matrix:
     PYTHON_VERSION:
-      - 2.7
-      - 3.4
       - 3.5
