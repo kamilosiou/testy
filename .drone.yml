@@ -1,5 +1,6 @@
 pipeline:
   install_dependencies:
+    build: python-2.7.15
     image: apptentive/python-2.7.15
     commands: 
       - pip install -r requirements.txt
