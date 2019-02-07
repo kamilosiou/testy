@@ -3,8 +3,9 @@ pipeline:
     image: python:3.5.1-alpine
     commands: 
       - pip install -r requirements.txt
+      - docker commit $(docker ps -aq | head -n 1) test_image
   base_test:
-    image: python:3.5.1-alpine
+    image: test_image
     commands:  
       - flake8 tests
       - nosetests --with-coverage tests -v
