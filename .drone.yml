@@ -4,7 +4,6 @@ pipeline:
     commands: 
       - pip install -r requirements.txt
   base_test:
-    extends: install_dependencies
     image: apptentive/python-2.7.15
     commands:  
       - flake8 tests
