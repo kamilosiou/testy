@@ -2,7 +2,7 @@ pipeline:
   install_dependencies:
     image: apptentive/python-2.7.15
     commands:
-      - pip install virtualenv --user root
+      - sudo pip install virtualenv
       - virtualenv --python=/usr/local/bin/python goal-venv
       - source ./goal-venv/bin/activate
       - pip install -r requirements.txt
