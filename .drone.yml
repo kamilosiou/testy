@@ -1,6 +1,4 @@
 pipeline:
-  build: python-2.7.15
-    image: apptentive/python-2.7.15
   install_dependencies:
     image: apptentive/python-2.7.15
     commands: 
@@ -11,3 +9,8 @@ pipeline:
     commands:  
       - flake8 tests
       - nosetests --with-coverage tests -v
+      
+services:
+  python:
+    build: python-2.7.15
+    image: apptentive/python-2.7.15
