@@ -4,6 +4,8 @@ pipeline:
     commands:
       - pip install -r requirements.txt
   base_test:
+    depends_on:
+      - install_dependencies
     image: python:3.5.1-alpine
     commands:  
       - flake8 tests
