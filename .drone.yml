@@ -4,5 +4,6 @@ pipeline:
     commands:
       - pip install -r requirements.txt
   base_test:
+    commands:  
       - flake8 tests
       - nosetests --with-coverage tests -v
