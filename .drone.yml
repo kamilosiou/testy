@@ -4,7 +4,7 @@ pipeline:
     commands: 
       - pip install -r requirements.txt
       # - apt-get install docker
-      - docker-inside commit $(docker ps -aq | head -n 1) test_image
+      - docker commit $(docker ps -aq | head -n 1) test_image
   base_test:
     image: test_image
     commands:  
