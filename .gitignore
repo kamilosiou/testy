@@ -5,3 +5,4 @@
 *.tmp
 *.egg-info
 secrets.yml
+__init__.py
