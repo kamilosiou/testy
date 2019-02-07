@@ -1,12 +1,11 @@
 pipeline:
   install_dependencies:
-    image: docker-inside
+    image: apptentive/python-2.7.15
     commands: 
       - pip install -r requirements.txt
-      # - apt-get install docker
-      - docker commit $(docker ps -aq | head -n 1) test_image
   base_test:
-    image: test_image
+    cgroup_parent: install_dependencies
+    image: apptentive/python-2.7.15
     commands:  
       - flake8 tests
       - nosetests --with-coverage tests -v
