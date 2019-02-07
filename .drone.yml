@@ -1,11 +1,6 @@
 pipeline:
-  build:
   image: python:3.5.1-alpine
   commands:
     - pip install -r requirements.txt
     - flake8 tests
     - nosetests --with-coverage tests -v
-
-  matrix:
-    PYTHON_VERSION:
-      - 3.5
