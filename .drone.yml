@@ -10,4 +10,4 @@ pipeline:
       - python setup.py install
       - flake8 dronedemo
       - mkdir -p coverage
-      - nosetests -v tests/
+      - nosetests -v hello.py
