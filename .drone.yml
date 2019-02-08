@@ -1,6 +1,6 @@
 pipeline:
   build:
-    image: docker/compose
+    image: docker/compose:1.24.0-rc1
     commands:
       - cd /Users/kamil.grzadziel/projects/goal-website
       - docker-compose up
