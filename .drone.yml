@@ -2,21 +2,13 @@ pipeline:
   install_dependencies:
     image: python:3.7.2-slim
     commands:
-      - pip install virtualenv
-      - virtualenv --python=/usr/local/bin/python goal-venv
-      - chmod +x goal-venv/bin/activate
-      - chmod +x goal-venv/bin/activate.fish
-      - ./goal-venv/bin/activate
-      - echo $VIRTUAL_ENV
       - pip install -r requirements.txt
-      - ./goal-venv/bin/activate.fish
+      - pip freeze
   base_test:
     image: python:3.7.2-slim
     commands:
-      - source ./goal-venv/bin/activate
       - flake8 tests
-      - nosetests --with-coverage tests -v
-      - deactivate   
+      - nosetests tests -v 
 services:
   python:
     build: python-3.7.2
