@@ -7,7 +7,7 @@ pipeline:
       - chmod +x goal-venv/bin/activate
       - ./goal-venv/bin/activate
       - pip install -r requirements.txt
-      - .goal-venv/bin/deactivate
+      - ./goal-venv/bin/deactivate
   base_test:
     image: python:3.7.2-slim
     commands:
