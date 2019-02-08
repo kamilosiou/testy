@@ -4,7 +4,7 @@ pipeline:
     commands:
       - pip install virtualenv
       - virtualenv --python=/usr/local/bin/python goal-venv
-      - chmod +x /goal-venv/bin/activate
+      - chmod +x goal-venv/bin/activate
       - ./goal-venv/bin/activate
       - pip install -r requirements.txt
       - deactivate
