@@ -1,6 +1,6 @@
 pipeline:
   install_dependencies:
-    image: apptentive/python-2.7.15
+    image: python:3.7.2-slim
     commands:
       - sudo pip install virtualenv
       - virtualenv --python=/usr/local/bin/python goal-venv
@@ -8,7 +8,7 @@ pipeline:
       - pip install -r requirements.txt
       - deactivate
   base_test:
-    image: apptentive/python-2.7.15
+    image: python:3.7.2-slim
     commands:
       - source ./goal-venv/bin/activate
       - flake8 tests
@@ -16,5 +16,5 @@ pipeline:
       - deactivate   
 services:
   python:
-    build: python-2.7.15
-    image: apptentive/python-2.7.15
+    build: python-3.7.2
+    image: python:3.7.2-slim
