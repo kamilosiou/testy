@@ -1,7 +1,7 @@
 pipeline:
   build:
     image: docker/compose:1.24.0-rc1
-    volumes: /Users/kamil.grzadziel/projects/goal-website/:/
+    volumes: /Users/kamil.grzadziel/projects/goal-website/:.
     commands:
       - pwd
       - cd /Users/kamil.grzadziel/projects/goal-website
