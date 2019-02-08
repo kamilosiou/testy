@@ -2,7 +2,7 @@ pipeline:
   install_dependencies:
     image: python:3.7.2-slim
     commands:
-      - sudo pip install virtualenv
+      - pip install virtualenv
       - virtualenv --python=/usr/local/bin/python goal-venv
       - source ./goal-venv/bin/activate
       - pip install -r requirements.txt
