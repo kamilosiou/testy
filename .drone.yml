@@ -1,0 +1,10 @@
+pipeline:
+  build:
+    image: docker/compose
+    commands:
+      - cd /Users/kamil.grzadziel/projects/goal-website
+      - docker-compose up
+      - docker exec -it $(docker ps -aq | head -n 1) bash
+      - cd srv/www/goal-website
+      - ./build.sh
+      
