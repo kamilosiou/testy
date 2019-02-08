@@ -4,10 +4,11 @@ pipeline:
     commands:
       - pip install virtualenv
       - virtualenv --python=/usr/local/bin/python goal-venv
-      - chmod +x goal-venv/bin/activate
-      - ./goal-venv/bin/activate
+      # - chmod +x goal-venv/bin/activate
+      - ./goal-venv/bin/activate.csh
+      - echo $VIRTUAL_ENV
       - pip install -r requirements.txt
-      - ./goal-venv/bin/deactivate
+      - deactivate.csh
   base_test:
     image: python:3.7.2-slim
     commands:
