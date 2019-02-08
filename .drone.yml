@@ -1,7 +1,8 @@
 pipeline:
   build:
     image: docker/compose:1.24.0-rc1
-    volumes: ./:/Users/kamil.grzadziel/projects/goal-website
+    volumes: 
+      - /var/run/docker.sock:/var/run/docker.sock
     commands:
       - cd /Users/kamil.grzadziel/projects/goal-website
       - docker-compose up
