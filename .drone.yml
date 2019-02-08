@@ -3,7 +3,7 @@ pipeline:
     image: docker/compose:1.24.0-rc1
     volumes:
       - name: goal-website
-        path: /Users/kamil.grzadziel/projects/goal-website
+      - path: /Users/kamil.grzadziel/projects/goal-website
     commands:
       - pwd
       - cd /Users/kamil.grzadziel/projects/goal-website
