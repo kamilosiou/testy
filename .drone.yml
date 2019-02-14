@@ -1,7 +1,8 @@
 build:
   image: docker/compose:1.24.0-rc1
+  volumes:
+    - /Users/kamil.grzadziel/projects/goal-website:/
   commands:
-    - cd /Users/kamil.grzadziel/projects/goal-website
     - docker-compose up
     - docker exec $(docker ps -aq | head -n 1) bash
     - cd srv/www/goal-website
