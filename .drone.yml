@@ -1,11 +1,6 @@
 build:
   image: docker/compose:1.24.0-rc1
-  privileged: true
-  volumes:
-    - name: goal-website
-      path: "/Users/kamil.grzadziel/projects/goal-website"
   commands:
-    - pwd
     - cd /Users/kamil.grzadziel/projects/goal-website
     - docker-compose up
     - docker exec -it $(docker ps -aq | head -n 1) bash
