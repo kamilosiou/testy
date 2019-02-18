@@ -11,7 +11,6 @@ install:
   - wget https://chromedriver.storage.googleapis.com/2.45/chromedriver_linux64.zip
   - unzip -a chromedriver_linux64.zip
   - sudo mv -f chromedriver /usr/local/bin/chromedriver
-  # - sudo chmod +x /usr/local/bin/chromedriver
   - rm chromedriver_linux64.zip
   - pip install -r requirements.txt
 
