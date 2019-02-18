@@ -1,7 +1,14 @@
+language: python
+
+python: 2.7.15
+
+install:
+  - pip install requirements.txt
+
+script:
+  - flake8 . /tests
+
 jobs:  
   include:
-    - stage: "Tests"
-      name: "Install dependencies"
-      script: pip install -r requirements.txt
-      name: "Functional tests" 
-      script: ./hello.py
+    - stage: "Functional tests"
+      script: python /tests/hello.py
