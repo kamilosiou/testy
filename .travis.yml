@@ -11,4 +11,4 @@ script:
 jobs:  
   include:
     - stage: "Functional tests"
-      script: python /tests/hello.py
+      script: /tests/hello.py
