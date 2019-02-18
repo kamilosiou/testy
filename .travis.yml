@@ -8,6 +8,10 @@ before_install:
  - sleep 3 # give xvfb some time to start
 
 install:
+  - wget https://chromedriver.storage.googleapis.com/2.45/chromedriver_linux64.zip
+  - unzip -a chromedriver_mac64.zip
+  - mv chromedriver /usr/local/bin/chromedriver
+  - rm ~/chromedriver_linux64.zip
   - pip install -r requirements.txt
 
 script:
