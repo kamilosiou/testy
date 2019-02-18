@@ -21,7 +21,7 @@ script:
 jobs:  
   include:
     - stage: "Functional tests"
-      script: python tests/test_argparse.py --language en
+      script: python tests/test_argparse.py --language $LANGUAGE
       
 addons:
   chrome: stable
