@@ -18,10 +18,13 @@ install:
 script:
   - flake8 /tests
 
+
 jobs:  
   include:
     - stage: "Functional tests"
-      script: python tests/test_argparse.py --language $LANGUAGE
+      env:
+        - LANGUAGE=en PF_DOMAIN=PROD SECURE=true BROWSER=chrome
+      script: python tests/test_argparse.py --language $LANGUAGE --pf_domain $PF_DOMAIN --secure $SECURE --browser $BROWSER
       
 addons:
   chrome: stable
