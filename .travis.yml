@@ -17,16 +17,13 @@ install:
 
 jobs: 
   include:
-    - stage: "Article page tests"
-      matrix:
-        include:
-          env:
-           - LANGUAGE=en
-           script: python tests/test_argparse.py --language $LANGUAGE
-           - LANGUAGE=de
-           script: python tests/test_argparse.py --language $LANGUAGE
-           - LANGUAGE=ar
-           script: python tests/test_argparse.py --language $LANGUAGE
+   - stage: "Article page tests"
+     matrix:
+      env:
+       - LANGUAGE=en
+       - LANGUAGE=de
+       - LANGUAGE=ar
+      script: python tests/test_argparse.py --language $LANGUAGE
       
 addons:
   chrome: stable
