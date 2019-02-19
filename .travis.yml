@@ -17,9 +17,9 @@ install:
 
 env:
  matrix:
-  LANGUAGE=en
-  LANGUAGE=ar
-  LANGUAGE=de
+  - LANGUAGE=en
+  - LANGUAGE=ar
+  - LANGUAGE=de
 jobs: 
   include:
    - stage: "Article page tests"
