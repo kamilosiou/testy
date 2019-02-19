@@ -15,11 +15,13 @@ install:
   - rm chromedriver_linux64.zip
   - pip install -r requirements.txt
 
-matrix:
- include:
-  env: LANGUAGE=en
-  env: LANGUAGE=en-gb
-  env: LANGUAGE=en-us
+env:
+ global:
+  - PF_DOMAIN=PREPROD
+ matrix:
+  - LANGUAGE=en
+  - LANGUAGE=en-gb
+  - LANGUAGE=en-us
   
 jobs:
  include:
