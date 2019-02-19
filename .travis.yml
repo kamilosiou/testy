@@ -15,18 +15,6 @@ install:
   - rm chromedriver_linux64.zip
   - pip install -r requirements.txt
 
-script:
-  - flake8 /tests
-jobs:
-  include:
-  - stage: build
-    matrix:
-      include:
-      - python: 2.7
-        env: DIST=centos6
-      - python: 2.7
-        env: DIST=centos7
-
 jobs: 
   include:
     - stage: "Article page tests"
