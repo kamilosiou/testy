@@ -21,10 +21,12 @@ script:
 
 jobs:  
   include:
-    - stage: "Functional tests"
+    - stage: "Article page tests"
       env:
-        - LANGUAGE=en PF_DOMAIN=PROD SECURE=true BROWSER=chrome
-      script: python tests/test_argparse.py --language $LANGUAGE --pf_domain $PF_DOMAIN --secure $SECURE --browser $BROWSER
+        - LANGUAGE=en
+        - LANGUAGE=de
+        - LANGUAGE=ar
+      script: python tests/test_argparse.py --language $LANGUAGE
       
 addons:
   chrome: stable
