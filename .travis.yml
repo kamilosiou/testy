@@ -21,7 +21,7 @@ env:
   - LANGUAGE=ar
   - LANGUAGE=de
 jobs: 
-  include:
+  matrix:
    - stage: "Article page tests"
      script: python tests/test_argparse.py --language $LANGUAGE --suite article_page_tests
    - stage: "Gallery page tests"
