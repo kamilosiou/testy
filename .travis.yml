@@ -19,13 +19,19 @@ script:
   - flake8 /tests
 
 
-jobs:  
+matrix:  
   include:
     - stage: "Article page tests"
       env:
         - LANGUAGE=en
         - LANGUAGE=de
         - LANGUAGE=ar
+      script: python tests/test_argparse.py --language $LANGUAGE
+    - stage: "Betting article page tests"
+      env:
+        - LANGUAGE=en-gb
+        - LANGUAGE=fr
+        - LANGUAGE=vn
       script: python tests/test_argparse.py --language $LANGUAGE
       
 addons:
