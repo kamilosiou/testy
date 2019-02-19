@@ -20,12 +20,13 @@ env:
   - LANGUAGE=en
   - LANGUAGE=ar
   - LANGUAGE=de
-jobs: 
-  matrix:
-   - stage: "Article page tests"
-     script: python tests/test_argparse.py --language $LANGUAGE --suite article_page_tests
-   - stage: "Gallery page tests"
-     script: python tests/test_argparse.py --language $LANGUAGE --suite gallery_page_tests
+
+matrix:
+ include:
+  - stage: "Article page tests"
+    script: python tests/test_argparse.py --language $LANGUAGE --suite article_page_tests
+  - stage: "Gallery page tests"
+    script: python tests/test_argparse.py --language $LANGUAGE --suite gallery_page_tests
       
 addons:
   chrome: stable
