@@ -17,22 +17,28 @@ install:
 
 script:
   - flake8 /tests
+jobs:
+  include:
+  - stage: build
+    matrix:
+      include:
+      - python: 2.7
+        env: DIST=centos6
+      - python: 2.7
+        env: DIST=centos7
 
-
-matrix:  
+jobs: 
   include:
     - stage: "Article page tests"
-      env:
-        - LANGUAGE=en
-        - LANGUAGE=de
-        - LANGUAGE=ar
-      script: python tests/test_argparse.py --language $LANGUAGE
-    - stage: "Betting article page tests"
-      env:
-        - LANGUAGE=en-gb
-        - LANGUAGE=fr
-        - LANGUAGE=vn
-      script: python tests/test_argparse.py --language $LANGUAGE
+      matrix:
+        include:
+          env:
+           - LANGUAGE=en
+           script: python tests/test_argparse.py --language $LANGUAGE
+           - LANGUAGE=de
+           script: python tests/test_argparse.py --language $LANGUAGE
+           - LANGUAGE=ar
+           script: python tests/test_argparse.py --language $LANGUAGE
       
 addons:
   chrome: stable
