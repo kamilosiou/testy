@@ -23,7 +23,6 @@ jobs:
  include:
   - stage: "Article page tests"
     matrix:
-     include:
       env:
         - LANGUAGE=en
         - LANGUAGE=en-gb
