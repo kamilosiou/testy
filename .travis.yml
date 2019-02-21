@@ -26,7 +26,7 @@ jobs:
    env:
     - LANGUAGE=en
     - LANGUAGE=en-gb
-  script: python tests/test_argparse.py --language $LANGUAGE --suite article_page_tests
+   script: python tests/test_argparse.py --language $LANGUAGE --suite article_page_tests
       
 addons:
   chrome: stable
