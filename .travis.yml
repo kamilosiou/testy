@@ -18,15 +18,15 @@ install:
 env:
  global:
   - PF_DOMAIN=PREPROD
- matrix:
-  - LANGUAGE=en
-  - LANGUAGE=en-gb
-  - LANGUAGE=en-us
-  
+
 jobs:
  include:
-  - stage: "Article page tests"
-    script: python tests/test_argparse.py --language $LANGUAGE --suite article_page_tests
+  stage: "Article page tests"
+  matrix:
+   env:
+    - LANGUAGE=en
+    - LANGUAGE=en-gb
+  script: python tests/test_argparse.py --language $LANGUAGE --suite article_page_tests
       
 addons:
   chrome: stable
