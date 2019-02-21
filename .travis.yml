@@ -15,18 +15,19 @@ install:
   - rm chromedriver_linux64.zip
   - pip install -r requirements.txt
 
-env:
- global:
-  - PF_DOMAIN=PREPROD
+defaults: &defaults
+  env:
+   SUITE=article_page_tests
+   SUITE=gallery_page_tests
+  script:
+    - python tests/test_argparse.py --language $LANGUAGE --suite $SUITE
 
 jobs:
  include:
   - stage: "Article page tests"
-    matrix:
-     env:
-      - LANGUAGE=en
-      - LANGUAGE=en-gb
-    script: python tests/test_argparse.py --language $LANGUAGE --suite article_page_tests
+    env:
+     - LANGUAGE=en-gb
+    <<: *defaults
       
 addons:
   chrome: stable
