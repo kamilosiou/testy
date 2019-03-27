@@ -19,7 +19,7 @@ env:
 - TEST_SUITE=article_page_tests/test_suite.py
 - TEST_SUITE=gallery_page_tests/tets_suite.py
 
-script: python tests/test_argparse --suite $TEST_SUITE --language en
+script: python tests/test_argparse.py --suite $TEST_SUITE --language en
       
 addons:
   chrome: stable
