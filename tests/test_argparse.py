@@ -1,10 +1,15 @@
 import argparse
 
+languages = ['en',
+             'en-gb',
+             'de']
+
+
 parser = argparse.ArgumentParser()
-parser.add_argument("--language")
 parser.add_argument("--suite")
 
 args = parser.parse_args()
 
-print args.language
-print args.suite
+for language in languages:
+  print language
+  print args.suite
