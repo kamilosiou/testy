@@ -19,10 +19,6 @@ suites:
 - TEST_SUITE=article_page_tests/test_suite.py
 - TEST_SUITE=gallery_page_tests/tets_suite.py
 
-env:
-- LANGUAGE=en
-- LANGUAGE=en-gb
-
 script: python tests/test_argparse.py --suite $TEST_SUITE --language $LANGUAGE
       
 addons:
