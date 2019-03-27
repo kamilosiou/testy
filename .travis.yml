@@ -15,9 +15,10 @@ install:
   - rm chromedriver_linux64.zip
   - pip install -r requirements.txt
 
-suites:
+env:
 - TEST_SUITE=article_page_tests/test_suite.py
-- TEST_SUITE=gallery_page_tests/tets_suite.py
+- TEST_SUITE=gallery_page_tests/test_suite.py
+- TEST_SUITE=team_page_tests/test_suite.py
 
 script: python tests/test_argparse.py --suite $TEST_SUITE
       
