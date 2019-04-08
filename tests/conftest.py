@@ -4,7 +4,6 @@ from elementium.drivers.se import SeElements
 # Own
 import pytest
 
-
 @pytest.fixture(scope='session', autouse=True)
 def driver_get(request):
     from selenium import webdriver
