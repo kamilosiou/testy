@@ -16,11 +16,14 @@ install:
   - pip install -r requirements.txt
 
 env:
-- TEST_SUITE=article_page_tests/test_suite.py
-- TEST_SUITE=gallery_page_tests/test_suite.py
-- TEST_SUITE=team_page_tests/test_suite.py
+- LANGUAGE=en
+- LANGUAGE=en-gb
+- LANGUAGE=en-ng
+- LANGUAGE=ar
+- LANGUAGE=jp
+- LANGUAGE=vn
 
-script: python tests/test_argparse.py --suite $TEST_SUITE
+script: python tests/test_argparse.py --suite article_page_tests/test_suite.py
       
 addons:
   chrome: stable
