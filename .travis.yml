@@ -22,7 +22,7 @@ env:
 - SUITE=livescore_page_tests/test_suite.py
 - SUITE=match_page_tests/test_suite.py
 
-script: python /tests/test_title.py --language en --suite $SUITE
+script: python tests/test_title.py --language en --suite $SUITE
       
 addons:
   chrome: stable
