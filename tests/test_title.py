@@ -7,5 +7,5 @@ parser.add_argument('--language', default='en')
 args, _ = parser.parse_known_args()
 
 browser = webdriver.Chrome()
-browser.get('https://www.goal.com/{0}'.format(args.language)
+browser.get('https://www.goal.com/{0}'.format(args.language))
 assert browser.title == True
