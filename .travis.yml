@@ -23,7 +23,7 @@ env:
 - LANGUAGE=jp
 - LANGUAGE=vn
 
-script: python tests/test_title.py --suite article_page_tests/test_suite.py
+script: python tests/test_title.py
       
 addons:
   chrome: stable
