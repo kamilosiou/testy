@@ -23,10 +23,9 @@ env:
 - SUITE=match_page_tests/test_suite.py
 
 matrix:
-  include:
-    - env: LANGUAGE=en
-    - env: LANGUAGE=ar
-    - env: LANGUAGE=vn
+  - env: LANGUAGE=en
+  - env: LANGUAGE=ar
+  - env: LANGUAGE=vn
       
 script: python tests/test_title.py --language $LANGUAGE --suite $SUITE
       
