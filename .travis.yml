@@ -14,16 +14,15 @@ install:
   - sudo mv -f chromedriver /usr/local/bin/chromedriver
   - rm chromedriver_linux64.zip
   - pip install -r requirements.txt
+  - pip install pytest
 
 env:
-- LANGUAGE=en
-- LANGUAGE=en-gb
-- LANGUAGE=en-ng
-- LANGUAGE=ar
-- LANGUAGE=jp
-- LANGUAGE=vn
+- SUITE=article_page_tests/test_suite.py
+- SUITE=gallery_page_tests/test_suite.py
+- SUITE=livescore_page_tests/test_suite.py
+- SUITE=match_page_tests/test_suite.py
 
-script: python tests/test_title.py
+script: python /tests/test_title.py --language en --suite $SUITE
       
 addons:
   chrome: stable
