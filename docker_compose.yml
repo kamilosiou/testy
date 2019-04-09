@@ -1,0 +1,43 @@
+version: '3'
+services:
+  nginx:
+    image: 'nginx:1.12.2-alpine'
+    volumes:
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:cached
+      - ./docker/nginx/conf.d/gzip.conf:/etc/nginx/conf.d/gzip.conf:cached
+      - ./docker/nginx/conf.d/wildcard.conf:/etc/nginx/conf.d/wildcard.conf:cached
+      - ./docker/nginx/conf.d/wildcard_ssl.conf:/etc/nginx/conf.d/wildcard_ssl.conf:cached
+      - ./docker/nginx/certificates/:/etc/nginx/certificates:cached
+      - ./public:/var/www/goal-website/public:cached
+      - ./docker/nginx/logs:/var/log/nginx
+    ports:
+      - '80:80'
+      - '443:443'
+  app:
+    build:
+      context: './docker/app'
+      args:
+        - ZERODOCK_NODE_VERSION=10
+        - PROJECT_PATH=/var/www/goal-website
+        - XDEBUG_REMOTE_HOST=host.docker.internal
+    volumes:
+      - ~/.ssh:/root/.ssh:cached
+      - ./:/var/www/goal-website:cached
+      - /var/www/goal-website/node_modules
+      - /var/www/goal-website/vendor
+    ports:
+      - '9001:9001'
+    environment:
+      - APP_REDIS_SERVERS={"default":{"host":"redis","port":"6379"}}
+      - COMPOSER_ALLOW_SUPERUSER=1
+    working_dir: /var/www/goal-website
+    env_file: .env
+  redis:
+    image: 'redis:3.2.3-alpine'
+  xhprof_viewer:
+    build:
+      context: ./docker/xhprof_viewer
+    volumes:
+      - ./storage/xhprof:/var/www/xhprof
+    ports:
+      - '8888:8888'
