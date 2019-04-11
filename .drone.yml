@@ -1,0 +1,14 @@
+build:
+  image: python:3.6-alpine
+  commands:
+    - python tests/test_title.py --suite $SUITE --lang $LANG
+
+matrix:
+  LANG:
+    - en
+    - en-gb
+    - de
+  SUITE:
+    - article_page_tests/test_suite.py
+    - player_page_tests/test_suite.py
+    - livescore_page_tests/test_suite.py
