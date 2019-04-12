@@ -6,7 +6,7 @@ build:
 matrix:
   LANG:
     - en
-    - en-gb
+    - en-ng
     - de
   SUITE:
     - article_page_tests/test_suite.py
