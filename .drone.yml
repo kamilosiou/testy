@@ -9,7 +9,6 @@ matrix:
     - en-gb
   SUITE:
     - article_page_tests/test_suite.py
-    - player_page_tests/test_suite.py
     - livescore_page_tests/test_suite.py
     
 services:
