@@ -5,6 +5,6 @@ Travis status
 
 Drone status
 
-[![Build Status](http://63ef050f.ngrok.io/api/badges/kgrzadziel/ci_test/status.svg)](http://63ef050f.ngrok.io/kgrzadziel/ci_test)
+[![Build Status](http://kamil.grzadziel.localhost.run/api/badges/kgrzadziel/ci_test/status.svg)](http://kamil.grzadziel.localhost.run/kgrzadziel/ci_test)
 
 This is a simple test repository for CI tools
