@@ -6,7 +6,7 @@ build:
 matrix:
   LANG:
     - en
-    - en-gb
+    - en-ng
   SUITE:
     - article_page_tests/test_suite.py
     - livescore_page_tests/test_suite.py
