@@ -9,6 +9,8 @@ matrix:
   LANG:
     - en
     - en-ng
+    - de
+    - fr
   SUITE:
     - article_page_tests/test_suite.py
     - livescore_page_tests/test_suite.py
