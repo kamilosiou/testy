@@ -1,9 +1,12 @@
-pipeline:
-  build:
-    image: python:3.6-alpine
-    commands:
-      - pip3 install -r requirements.txt
-      - python tests/test_title.py --lang ${LANG} --suite ${SUITE}
+kind: pipeline
+name: matrix
+
+steps:
+- name: frontend
+  image: python:3.6-alpine
+  commands:
+    - pip3 install -r requirements.txt
+    - python tests/test_title.py --lang ${LANG} --suite ${SUITE}
 
 matrix:
   LANG:
