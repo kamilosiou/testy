@@ -3,7 +3,7 @@ import argparse
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('--language', default='en')
+parser.add_argument('--lang', default='en')
 parser.add_argument('--suite', default='home_page_tests/test_suite.py')
 args, _ = parser.parse_known_args()
 
