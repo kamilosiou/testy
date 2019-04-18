@@ -1,7 +1,8 @@
-build:
-  image: python:3.6-alpine
-  commands:
-    - python tests/test_title.py --suite $SUITE --lang $LANG
+pipeline:
+  build:
+    image: python:3.6-alpine
+    commands:
+      - python tests/test_title.py --suite $SUITE --lang $LANG
 
 matrix:
   LANG:
