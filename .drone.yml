@@ -3,7 +3,7 @@ pipeline:
     image: python:3.6-alpine
     commands:
       - pip3 install -r requirements.txt
-      - python tests/test_title.py --suite $$SUITE --lang $$LANG
+      - python tests/test_title.py --suite ${SUITE} --lang ${LANG}
 
 matrix:
   LANG:
