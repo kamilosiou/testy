@@ -1,21 +1,19 @@
-kind: pipeline
-name: matrix
+pipeline:
+  build:
+    image: python:3.6-alpine
+    commands:
+      - pip3 install -r requirements.txt
+      - python tests/run_test_suite.py --suite $SUITE --lang $LANG
 
-steps:
-- name: frontend
-  image: python:3.6-alpine
-  commands:
-    - pip3 install -r requirements.txt
-    - python tests/test_title.py --lang ${LANG} --suite ${SUITE}
-
-matrix:
-  LANG:
-    - en
-    - en-ng
-    - de
-  SUITE:
-    - article_page_tests/test_suite.py
-    - livescore_page_tests/test_suite.py
+env:
+  matrix:
+    LANG:
+      - en
+      - en-ng
+      - de
+    SUITE:
+      - article_page_tests/test_suite.py
+      - livescore_page_tests/test_suite.py
     
 # services:
 #   selenium:
