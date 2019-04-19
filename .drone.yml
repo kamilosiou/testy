@@ -3,7 +3,7 @@ pipeline:
     image: python:3.6-alpine
     commands:
       - wget https://chromedriver.storage.googleapis.com/2.45/chromedriver_linux64.zip
-      - unzip -a chromedriver_mac64.zip
+      - unzip chromedriver_mac64.zip
       - mv chromedriver /usr/local/bin/chromedriver
       - pip3 install -r requirements.txt
       - python tests/test_title.py --suite test_suite.py --lang en
