@@ -13,7 +13,7 @@ options.add_argument("--headless")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 browser = webdriver.Chrome(chrome_options=options)
-browser.get('https://www.goal.com/{0}'.format(args.language))
+browser.get('https://www.goal.com/{0}'.format(args.lang))
 print(args.suite)
 print(browser.title)
 assert bool(browser.title) == True
