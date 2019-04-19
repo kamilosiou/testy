@@ -2,10 +2,10 @@ pipeline:
   build:
     image: joyzoursky/python-chromedriver:3.7-alpine3.8-selenium
     commands:
-      # - wget https://chromedriver.storage.googleapis.com/2.45/chromedriver_linux64.zip
-      # - unzip chromedriver_linux64.zip
-      # - mv chromedriver /usr/local/bin/chromedriver
-      # - chmod a+x /usr/local/bin/chromedriver
+      - wget https://chromedriver.storage.googleapis.com/2.45/chromedriver_linux64.zip
+      - unzip chromedriver_linux64.zip
+      - mv chromedriver /usr/local/bin/chromedriver
+      - chmod a+x /usr/local/bin/chromedriver
       - pip install -r requirements.txt
       - python tests/test_title.py --suite test_suite.py --lang en
 
