@@ -18,11 +18,11 @@ matrix:
     - article_page_tests/test_suite.py
     - livescore_page_tests/test_suite.py
     
-services:
-  selenium:
-    image: selenium/hub
-  chrome:
-    image: selenium/node-chrome
-    environment:
-      HUB_PORT_4444_TCP_ADDR: selenium
-      HUB_PORT_4444_TCP_PORT: "4444"
+#services:
+#  selenium:
+#    image: selenium/hub
+#  chrome:
+#    image: selenium/node-chrome
+#    environment:
+#      HUB_PORT_4444_TCP_ADDR: selenium
+#      HUB_PORT_4444_TCP_PORT: "4444"
